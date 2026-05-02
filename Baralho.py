@@ -1,4 +1,5 @@
 from Carta import Carta
+import random
 
 class Baralho:
     def __init__(self):
@@ -14,3 +15,9 @@ class Baralho:
     
     def getCartas(self):
         return self.__cartas
+    
+    def embaralhar(self):
+        random.shuffle(self.__cartas)
+
+    def distribuir(self):
+        return self.__cartas.pop(0)
