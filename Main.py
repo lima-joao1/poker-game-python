@@ -1,5 +1,6 @@
 from Baralho import Baralho
 from Player import Player
+from Mesa import Mesa
 
 def menu(player):
     while True:
@@ -43,7 +44,7 @@ def start_game(player):
         mesa.receberCarta(baralho.distribuir())
 
     print(f"Suas cartas: {player.getMao().mostrar()}")
-    print(f"Mesa: " {mesa.mostrar()})
+    print(f"Mesa: {mesa.mostrar()}")
     print()
 
 
