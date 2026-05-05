@@ -13,3 +13,7 @@ class Player:
 
     def getMao(self):
         return self.__hand
+
+    def betMoney(self, amount):
+        self.__playerMoney -= amount
+        return amount

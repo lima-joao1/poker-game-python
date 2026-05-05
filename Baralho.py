@@ -4,7 +4,7 @@ import random
 class Baralho:
     def __init__(self):
         self.__cartas = []
-        suits = ["Ouro", "Copas", "Paus", "Espadas"]
+        suits = ["♦", "♥", "♣", "♠"]
         values = ["Ás", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
         
         

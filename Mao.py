@@ -16,6 +16,13 @@ class Mao:
     def limpar(self):
         self.__cartas.clear()
     
+    def mostrar(self):
+        resultado = ""
+        for i in range(len(self.__cartas)):
+            resultado += str(self.__cartas[i])
+            if i < len(self.__cartas) - 1:
+                resultado += ", "
+        return resultado
     
     ORDEM_VALORES = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "Ás"]
 
@@ -151,10 +158,10 @@ class Mao:
 
         for v_player, v_enemy in zip(valores_player, valores_enemy):
             if v_player > v_enemy:
-                print("Você venceu no desempate!")  #VVai analisar carta contra para verificar qual a maior
+                print("Você venceu!")  #VVai analisar carta contra para verificar qual a maior
                 return "player"
             elif v_enemy > v_player:
-                print("Inimigo venceu no desempate!")
+                print("Inimigo venceu!")
                 return "enemy"
 
         print("Empate!")
@@ -167,8 +174,27 @@ class Mao:
         rank_player = Mao.RANKING_MAOS.index(resultado_player)
         rank_enemy  = Mao.RANKING_MAOS.index(resultado_enemy)
 
+        print()
+        print(f"A sua mão: ")
+        for i in range(2):
+            print(f"{cartas_player[i].getValue()} {cartas_player[i].getSuit()}")
+
+        print()
+
+        print(f"Mão do outro: ")
+        for i in range(2):
+            print(f"{cartas_enemy[i].getValue()} {cartas_enemy[i].getSuit()}")
+
+        print()
+
+        print(f"Mesa: ")
+        for i in range(2, 7):
+            print(f"{cartas_player[i].getValue()} {cartas_enemy[i].getSuit()}")
+
+        print()
         if rank_player > rank_enemy:
             print("Você venceu!")
+            
             return "player"
         elif rank_enemy > rank_player:
             print("Inimigo venceu!")

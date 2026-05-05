@@ -10,4 +10,4 @@ class Carta:
         return self.__suit
     
     def __str__(self):
-        return f"{self.__value} de {self.__suit}"
+        return f"{self.__value} {self.__suit}"
