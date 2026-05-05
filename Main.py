@@ -1,5 +1,4 @@
 from Baralho import Baralho
-from Carta import Carta
 from Player import Player
 
 def menu(player):
@@ -39,7 +38,13 @@ def start_game(player):
         player.getMao().receberCarta(baralho.distribuir())
         enemy.getMao().receberCarta(baralho.distribuir())
     
-    
+    mesa = Mesa()
+    for i in range(5):
+        mesa.receberCarta(baralho.distribuir())
+
+    print(f"Suas cartas: {player.getMao().mostrar()}")
+    print(f"Mesa: " {mesa.mostrar()})
+    print()
 
 
 def depositMoney(player):

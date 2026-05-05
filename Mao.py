@@ -1,4 +1,3 @@
-from abc import ABC, abstractmethod
 
 class Mao:
     def __init__(self):
@@ -13,3 +12,14 @@ class Mao:
     
     def limpar(self):
         self.__cartas.clear()
+
+    def mostrar(self):
+        resultado = ""
+        
+        for i in range(len(self.__cartas)):
+            resultado += str(self.__cartas[i])
+            
+            if i < len(self.__cartas) - 1:
+                resultado += ", "
+
+        return resultado
